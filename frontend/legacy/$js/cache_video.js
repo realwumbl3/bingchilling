@@ -7,7 +7,7 @@ class cached_video {
     }
 
     video_url(file_name) {
-        return "/staticcached/legacy/packs/" + this._engine.loaded_pack_name + "/clips/" + file_name
+        return "/staticcached/packs/" + this._engine.loaded_pack_name + "/clips/" + file_name
     }
 
     add_video(file_name) {

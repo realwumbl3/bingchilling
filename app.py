@@ -49,7 +49,7 @@ class BingChillingBackEnd:
                 "bingchilling",
             ),
             data={
-                "packs": [os.path.basename(x) for x in glob(f"./public/static/packs/*")],
+                "packs": [os.path.basename(x) for x in glob(f"./public/packs/*")],
             },
         )
         
@@ -59,7 +59,7 @@ class BingChillingBackEnd:
                 "legacy",
             ),
             data={
-                "packs": [os.path.basename(x) for x in glob(f"./public/static/packs/*")],
+                "packs": [os.path.basename(x) for x in glob(f"./public/packs/*")],
             },
         )
 

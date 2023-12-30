@@ -22,7 +22,7 @@ export default class Game {
 
         this.init = true
 
-        this.cached_audio_player = new cached_audio("/static/legacy/sounds/")
+        this.cached_audio_player = new cached_audio("/static/sounds/")
 
         this.cached_video_player = new cached_video(this)
 
@@ -251,7 +251,7 @@ export default class Game {
 
 
     fetch_pack(pack_name, init) {
-        fetch(`${window.origin}/staticcached/legacy/packs/${pack_name}/_clips.json`, {
+        fetch(`${window.origin}/staticcached/packs/${pack_name}/_clips.json`, {
             headers: {
                 'Cache-Control': 'no-cache'
             }

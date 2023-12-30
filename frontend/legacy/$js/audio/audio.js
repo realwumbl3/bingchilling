@@ -49,4 +49,4 @@ class audio_class {
         return source
     }
 }
-const audio = new audio_class('static/legacy/audio/sounds/')
+const audio = new audio_class('static/audio/sounds/')
