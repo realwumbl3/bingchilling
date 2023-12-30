@@ -1,0 +1,17 @@
+.PlayerCursor {
+    position: fixed;
+    width: 3vmax;
+    aspect-ratio: 1/1;
+    background-color: white;
+    border: 2px solid black;
+    transform: rotate(6deg);
+    transform-origin: 0% 0%;
+    border-radius: 3% 50% 100% 50%;
+    opacity: 0;
+    transition: opacity 100ms ease;
+
+}
+
+.PlayerCursor.visible {
+    opacity: 1;
+}

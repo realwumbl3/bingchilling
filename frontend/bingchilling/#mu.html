@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BingChilling!</title>
+		<meta name="viewport" />
+		<meta name="description" content="" />
+
+		<meta name="viewport" content="width=600,user-scalable=no" />
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="theme-color" content="#000000" />
+		<!-- <link rel="manifest" href="static/artdek/manifest.webmanifest" /> -->
+		<link rel="apple-touch-startup-image" href="static/favicon3.ico" />
+		<link rel="icon" type="image/x-icon" href="static/favicon3.ico" />
+		<link rel="icon" sizes="192x192" href="static/favicon3.ico" />
+		<link rel="icon" sizes="256x256" href="static/favicon3.ico" />
+		{% for item in files["dependencies"] %}
+		<script defer src="static/{{page_name}}{{item}}"></script>
+		{% endfor %}
+		<script type="module">
+			window.auto_reload = true;
+			import "https://zyx.wumbl3.xyz/v:1.4/dev/";
+		</script>
+		<script>
+			const pageData = {{"{{data|tojson}}"}}
+			pageData.mobile = typeof window.orientation !== "undefined";
+			const relUrl = (path) => new URL(path, `${window.location.origin}/static/{{page_name}}/es6/App/`);
+		</script>
+	</head>
+	<style>
+		@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap");
+		@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap");
+
+		html {
+			background-color: black;
+		}
+		body {
+			height: 100vh;
+			width: 100vw;
+			opacity: 0;
+			transition: opacity 1s ease;
+			background-image: radial-gradient(circle at center, rgb(18 18 18), black);
+			overscroll-behavior-y: none;
+			overscroll-behavior-x: none;
+		}
+
+		.noTapHighlight {
+			-webkit-tap-highlight-color: transparent;
+		}
+
+		* {
+			box-sizing: border-box;
+			padding: 0;
+			margin: 0;
+			scrollbar-width: none;
+		}
+
+		*::-webkit-scrollbar {
+			display: none;
+		}
+	</style>
+	<!-- prettier-ignore -->
+	<body id="body" oncontextmenu="return false;">
+	<ph app></ph>
+</body>
+
+	<hidden css-js-template-assets>
+		{{"{% if data['userName'] == 'wumbl3' %}"}}
+		<script type="module" uwu defer src="static/{{page_name}}/es6/wumbl3.js"></script>
+		{{"{% endif %}"}} {% for item in files["css"] %}
+		<link rel="stylesheet" type="text/css" href="static/{{page_name}}{{ item }}" />
+		{% endfor %}
+		<script type="module" defer src="static/{{page_name}}/init.js"></script>
+	</hidden>
+</html>

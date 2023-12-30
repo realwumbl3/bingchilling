@@ -1,0 +1,10 @@
+{
+    "build_ignore": [
+        "base.html",
+        "head.html",
+        "body.html",
+        "options.json"
+    ],
+    "build_include": [
+    ]
+} 

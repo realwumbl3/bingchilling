@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap");
+
+html {
+    background-color: rgb(26, 26, 26) !important;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+    scrollbar-width: none;
+}
+
+placeholder {
+    display: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    height: 100vh;
+    transition: opacity .3s ease;
+    font-size: 30px;
+    background-image: radial-gradient(circle at bottom center, transparent, black);
+}
+
+hidden {
+    display: none;
+}
+
+.full_viewport {
+    width: 100vw;
+    height: 100vh;
+}
+
+main {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    display: grid;
+    justify-content: space-around;
+    align-items: center;
+    justify-items: center;
+    align-content: space-evenly;
+}
+
+behind {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+}
+
+infront {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+}
+
+infront>* {
+    pointer-events: all;
+}
+
+#buildDate {
+    position: fixed;
+    bottom: 0;
+    right: 1rem;
+    font-size: 10px;
+    font-family: "Roboto Condensed";
+    color: rgba(255, 255, 255, 0.062);
+    z-index: 10000000000;
+    transition: color 1s ease;
+    user-select: none;
+}
+
+#buildDate:hover {
+    color: rgb(255, 255, 255);
+}
