@@ -4,9 +4,7 @@ export const alertFx = new AlertFx();
 
 export default class Game {
 
-    // VID HIT HELPER
-
-    // TOO LATE MISS
+    // LMAO VERY OLD CODE DON'T JUDGE ME LMAOO
 
     constructor() {
 
@@ -361,7 +359,7 @@ export default class Game {
         this.cached_audio_player.play(sound_obj)
     }
 
-    get_time_scale = (whatever_variable) => whatever_variable * 1
+    get_time_scale = (whatever_variable) => whatever_variable * this.time_scale
 
     invert = () => this.game_container.classList.toggle('inverted')
 
@@ -545,7 +543,6 @@ export default class Game {
         let react_target = video.start_play + video.start_ms
         let react_target_end = video.start_play + video.end_ms
 
-
         let nearness = video.hit_time - react_target
 
         if (!this.debug_click) {
@@ -632,10 +629,6 @@ export default class Game {
 
         video.src = await this.cached_video_player.load(random_video_file)
 
-        // BG CLIP MIRROR
-        // let video2 = video.cloneNode(true)
-        // video2.classList.add('bg_video')
-
         let video_container_element = newElement({
             type: 'div',
             cls: 'drop_clip_video_container',
@@ -659,9 +652,6 @@ export default class Game {
         })
 
         clip.video = video
-
-        // BG CLIP MIRROR
-        // clip.video2 = video2
 
         clip.file_name = random_video_file
 
@@ -689,13 +679,7 @@ export default class Game {
 
             if (clip.random_video?.volume_red) clip.video.volume = clip.random_video?.volume_red * this.current_volume
 
-            // BG CLIP MIRROR
-            // clip.video2.playbackRate = this.time_scale
-            // clip.video2.muted = true
-
             clip.video.play()
-
-            // console.log('canplay?? ' + random_video_file)
         })
 
         clip.video.addEventListener('play', (e) => {
@@ -705,13 +689,7 @@ export default class Game {
             clip.react_target = clip.start_play + clip.start_ms
             clip.react_target_end = clip.start_play + clip.end_ms
 
-            // BG CLIP MIRROR
-            // clip.video2.playbackRate = .8
-            // clip.video2.play()
-
             this.play_video(clip)
-
-            // console.log('play?? ' + random_video_file)
         })
 
         return clip
@@ -721,15 +699,6 @@ export default class Game {
 
         if (!this.dont_remove_videos) this.PLAYING_VIDEOS = this.PLAYING_VIDEOS.filter(item => item !== video)
         for (let timeOut of [video?.hit_helper_timeout, video?.remove_timeout, video?.invert_timeout]) window.clearTimeout(timeOut)
-
-        // BG CLIP MIRROR
-        // video.video2.style.animationName = "unset"
-        // video.video2.style.transition = "opacity .3s ease"
-        // video.video2.style.opacity = getComputedStyle(video.video2).opacity
-        // video.video2.style.opacity = 0
-        // setTimeout(() => {
-        //     video.video2.remove()
-        // }, 300);
 
         video.remove_timeout = setTimeout(() => {
 

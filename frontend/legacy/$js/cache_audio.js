@@ -4,7 +4,7 @@ class cached_audio {
         this.AUDIO_DIR = _audio_dir
         this.ctx = new AudioContext()
         this.gainNode = this.ctx.createGain()
-        this.gainNode.gain.value = 1
+        this.gainNode.gain.value = 0.3
         this.gainNode.connect(this.ctx.destination)
         this.SOUNDS = {
 
